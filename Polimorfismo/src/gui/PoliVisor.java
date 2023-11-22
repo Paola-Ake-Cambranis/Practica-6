@@ -2,6 +2,9 @@ package gui;
 
 import graphics.Cuadrado;
 import graphics.FiguraGrafica;
+import graphics.Triangulo;
+import graphics.Rectangulo;
+import graphics.Circulo;
 import java.awt.Color;
 import java.awt.Graphics;
 import javax.swing.JColorChooser;
@@ -270,7 +273,17 @@ public class PoliVisor extends javax.swing.JFrame {
         figura.dibujar(getPanelGraphics());
         enableControls();
     }//GEN-LAST:event_botonTrianguloActionPerformed
+    private void botonRectanguloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRectanguloActionPerformed
+    figura = new Rectangulo(15, 15, 100, 50);
+        figura.dibujar(getPanelGraphics());
+        enableControls();
+    }//GEN-LAST:event_botonRectanguloActionPerformed
 
+    private void botonCirculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCirculoActionPerformed
+    figura = new Circulo(15, 15, 50);
+        figura.dibujar(getPanelGraphics());
+        enableControls();
+    }
     /**
      * @param args the command line arguments
      */
@@ -337,4 +350,5 @@ public class PoliVisor extends javax.swing.JFrame {
     private javax.swing.JPanel panelFigura;
     private javax.swing.JPanel panelTipo;
     // End of variables declaration//GEN-END:variables
+   private javax.swing.JButton botonCirculo;
 }

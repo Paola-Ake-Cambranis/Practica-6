@@ -4,47 +4,36 @@ import java.awt.Color;
 import java.awt.Graphics;
 
 /**
- * @author Héctor Quej Cosgaya
- * @author Jose Aguilar Canepa
- * 
- * Esta clase necesita de tu ayuda!
+ *
+ * @author nenod
  */
-public class Rectangulo extends FiguraGrafica {
+public class Circulo extends FiguraGrafica {
+ 
     protected int x;
     protected int y;
-    protected int lado1;
-    protected int lado2;
+    protected int diametro;
 
-    public Rectangulo (int x, int y, int lado1, int lado2) {
+    public Circulo (int x, int y, int diametro) {
         this.x = x;
         this.y = y;
-        this.lado1 = lado1;
-        this.lado2 = lado2;
+        this.diametro = diametro;
     }
-    
     @Override
-    public void dibujar(Graphics g){
-        g.fillRect(x, y, lado1, lado2);
+    public void dibujar(Graphics g) {
+    g.drawOval(x, y, diametro, diametro);
     }
-    
+
     @Override
     public void encojer(Graphics g) {
-        lado1 -= 10;
-        if (lado1 < 20) lado1 = 20;
-        
-        lado2 -= 5;
-        if (lado2 < 10) lado2 = 10;
-        
+        diametro -= 5;
+        if (diametro < 5) diametro = 5;
         this.dibujar(g);        
     }
     
     @Override
     public void agrandar(Graphics g) {
-        lado1 += 10;
-        if (lado1 > 250) lado1 = 250;
-        this.dibujar(g);
-        lado2 += 5;
-        if (lado2 > 125) lado2 = 125;
+        diametro += 5;
+        if (diametro > 200) diametro = 200;
         this.dibujar(g);
     }
     

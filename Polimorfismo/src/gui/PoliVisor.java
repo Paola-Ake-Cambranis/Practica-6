@@ -46,7 +46,7 @@ public class PoliVisor extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        panelTipo.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "¿Qué deseas dibujar?", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Comic Sans MS", 0, 14), java.awt.Color.black)); // NOI18N
+        panelTipo.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "¿Qué deseas dibujar?", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Comic Sans MS", 0, 14))); // NOI18N
 
         botonCuadrado.setText("Un cuadrado!");
         botonCuadrado.addActionListener(new java.awt.event.ActionListener() {
@@ -58,6 +58,11 @@ public class PoliVisor extends javax.swing.JFrame {
         botonRectangulo.setText("Un rectángulo!");
 
         botonTriangulo.setText("Un triángulo!");
+        botonTriangulo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonTrianguloActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout panelTipoLayout = new javax.swing.GroupLayout(panelTipo);
         panelTipo.setLayout(panelTipoLayout);
@@ -83,7 +88,7 @@ public class PoliVisor extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        panelControl.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, null, java.awt.Color.black));
+        panelControl.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
 
         botonArriba.setText("^");
         botonArriba.setEnabled(false);
@@ -159,7 +164,7 @@ public class PoliVisor extends javax.swing.JFrame {
                 .addGroup(panelControlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(botonDerecha, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(botonGrande, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panelControlLayout.setVerticalGroup(
             panelControlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -258,6 +263,13 @@ public class PoliVisor extends javax.swing.JFrame {
         figura.dibujar(getPanelGraphics());
         enableControls();
     }//GEN-LAST:event_botonCuadradoActionPerformed
+
+    private void botonTrianguloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonTrianguloActionPerformed
+        // TODO add your handling code here:
+        figura	=	new	Triangulo();
+        figura.dibujar(getPanelGraphics());
+        enableControls();
+    }//GEN-LAST:event_botonTrianguloActionPerformed
 
     /**
      * @param args the command line arguments
